@@ -28,6 +28,7 @@ class _WeekScheduleState extends State<WeekSchedule> {
         padding: EdgeInsets.all(20),
         color: Colors.white,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Flexible(
                 flex: 2,

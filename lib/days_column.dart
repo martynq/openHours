@@ -11,6 +11,7 @@ class Days extends StatelessWidget {
       children: <Widget>[
         for (var item in days)
           StringBox(
+            isDayColumn: true,
             string: item,
           ),
       ],

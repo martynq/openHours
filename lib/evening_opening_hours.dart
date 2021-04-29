@@ -22,6 +22,8 @@ class _EveningOpeningHoursState extends State<EveningOpeningHours> {
             StringBox(
               string: openingHoursSecondShift(item),
             )
+          else if (isOpen(item) == true)
+            StringBox(string: ' ')
           else
             StringBox(
               string: 'Closed',
