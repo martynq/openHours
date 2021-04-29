@@ -19,13 +19,13 @@ class _EveningOpeningHoursState extends State<EveningOpeningHours> {
       children: <Widget>[
         for (var item in wholeWeekHours)
           if (isOpen(item) && (hasSecondShift(item) == true))
-            StringBox(
+            StringContainer(
               string: openingHoursSecondShift(item),
             )
           else if (isOpen(item) == true)
-            StringBox(string: ' ')
+            StringContainer(string: ' ')
           else
-            StringBox(
+            StringContainer(
               string: 'Closed',
             )
       ],

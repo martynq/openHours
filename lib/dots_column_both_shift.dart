@@ -21,11 +21,11 @@ class _DotsForBothShiftState extends State<DotsForBothShift> {
           if (isOpen(item) &&
               (hasFirstShift(item) == true) &&
               (hasSecondShift(item) == true))
-            IconBox(
+            IconContainer(
               icon: Icons.circle,
             )
           else
-            StringBox(
+            StringContainer(
               string: ' ',
             )
       ],

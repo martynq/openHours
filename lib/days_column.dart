@@ -10,7 +10,7 @@ class Days extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         for (var item in days)
-          StringBox(
+          StringContainer(
             isDayColumn: true,
             string: item,
           ),

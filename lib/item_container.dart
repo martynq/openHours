@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class StringBox extends StatelessWidget {
+class StringContainer extends StatelessWidget {
   final String string;
   final bool isDayColumn;
 
-  const StringBox({Key key, this.string, this.isDayColumn}) : super(key: key);
+  const StringContainer({Key key, this.string, this.isDayColumn}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,10 @@ class StringBox extends StatelessWidget {
   }
 }
 
-class IconBox extends StatelessWidget {
+class IconContainer extends StatelessWidget {
   final IconData icon;
 
-  const IconBox({Key key, this.icon}) : super(key: key);
+  const IconContainer({Key key, this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

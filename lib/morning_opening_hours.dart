@@ -19,11 +19,11 @@ class _MorningOpeningHoursState extends State<MorningOpeningHours> {
       children: <Widget>[
         for (var item in wholeWeekHours)
           if (isOpen(item) && (hasFirstShift(item) == true))
-            StringBox(
+            StringContainer(
               string: openingHoursFirstShift(item),
             )
           else
-            StringBox(string: ' ')
+            StringContainer(string: ' ')
       ],
     );
   }
