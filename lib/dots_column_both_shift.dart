@@ -4,8 +4,10 @@ import 'package:flutter_open_hours/models/opening_hours.dart';
 
 class DotsForBothShift extends StatefulWidget {
   final List<OpeningHours> wholeWeekHours;
+  final int indexNumber;
 
-  const DotsForBothShift({Key key, this.wholeWeekHours}) : super(key: key);
+  const DotsForBothShift({Key key, this.wholeWeekHours, this.indexNumber})
+      : super(key: key);
 
   @override
   _DotsForBothShiftState createState() => _DotsForBothShiftState();
@@ -17,17 +19,19 @@ class _DotsForBothShiftState extends State<DotsForBothShift> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        for (var item in wholeWeekHours)
-          if (isOpen(item) &&
-              (hasFirstShift(item) == true) &&
-              (hasSecondShift(item) == true))
-            IconContainer(
-              icon: Icons.circle,
-            )
-          else
-            StringContainer(
-              string: ' ',
-            )
+        if (isOpen(wholeWeekHours[widget.indexNumber]) &&
+            (hasFirstShift(wholeWeekHours[widget.indexNumber]) == true) &&
+            (hasSecondShift(wholeWeekHours[widget.indexNumber]) == true))
+          ItemContainer(
+            isThinColumn: true,
+            isIconColumn: true,
+            icon: Icons.circle,
+          )
+        else
+          ItemContainer(
+            isThinColumn: true,
+            isIconColumn: true,
+          ),
       ],
     );
   }

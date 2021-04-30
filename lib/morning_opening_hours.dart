@@ -4,8 +4,10 @@ import 'package:flutter_open_hours/models/opening_hours.dart';
 
 class MorningOpeningHours extends StatefulWidget {
   final List<OpeningHours> wholeWeekHours;
+  final int indexNumber;
 
-  const MorningOpeningHours({Key key, this.wholeWeekHours}) : super(key: key);
+  const MorningOpeningHours({Key key, this.wholeWeekHours, this.indexNumber})
+      : super(key: key);
 
   @override
   _MorningOpeningHoursState createState() => _MorningOpeningHoursState();
@@ -14,17 +16,13 @@ class MorningOpeningHours extends StatefulWidget {
 class _MorningOpeningHoursState extends State<MorningOpeningHours> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-        for (var item in wholeWeekHours)
-          if (isOpen(item) && (hasFirstShift(item) == true))
-            StringContainer(
-              string: openingHoursFirstShift(item),
-            )
-          else
-            StringContainer(string: ' ')
-      ],
-    );
+    return SizedBox(
+        child: (isOpen(wholeWeekHours[widget.indexNumber]) &&
+                (hasFirstShift(wholeWeekHours[widget.indexNumber]) == true))
+            ? ItemContainer(
+                string:
+                    openingHoursFirstShift(wholeWeekHours[widget.indexNumber]),
+              )
+            : ItemContainer(string: ' '));
   }
 }
