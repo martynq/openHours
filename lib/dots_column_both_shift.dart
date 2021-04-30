@@ -30,8 +30,7 @@ class _DotsForBothShiftState extends State<DotsForBothShift> {
         else
           ItemContainer(
             isThinColumn: true,
-            isIconColumn: true,
-          ),
+          isIconColumn: true,),
       ],
     );
   }

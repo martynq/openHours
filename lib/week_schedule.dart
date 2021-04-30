@@ -5,7 +5,7 @@ class WeekSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
+      child:  Container(
         height: 300,
         width: 400,
         padding: EdgeInsets.all(20),

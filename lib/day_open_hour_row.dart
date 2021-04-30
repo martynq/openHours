@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_open_hours/dots_column_both_shift.dart';
-import 'package:flutter_open_hours/evening_opening_hours.dart';
+import 'package:flutter_open_hours/opening_hours.dart';
 import 'package:flutter_open_hours/item_container.dart';
-import 'package:flutter_open_hours/morning_opening_hours.dart';
 
 class DayOpenHours extends StatelessWidget {
   final String day;
@@ -49,13 +48,15 @@ class DayOpenHours extends StatelessWidget {
           isDayColumn: true,
           isThinColumn: true,
         ),
-        MorningOpeningHours(
+        OpeningHours(
+          eveningOpenHour: false,
           indexNumber: dayIndexNumber,
         ),
         DotsForBothShift(
           indexNumber: dayIndexNumber,
         ),
-        EveningOpeningHours(
+        OpeningHours(
+          eveningOpenHour: true,
           indexNumber: dayIndexNumber,
         ),
       ],
