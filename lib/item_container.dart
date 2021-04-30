@@ -40,18 +40,3 @@ class ItemContainer extends StatelessWidget {
     );
   }
 }
-
-class IconContainer extends StatelessWidget {
-  final IconData icon;
-
-  const IconContainer({Key key, this.icon}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 40,
-      height: 30,
-      child: Center(child: Icon(icon, size: 8.0)),
-    );
-  }
-}
